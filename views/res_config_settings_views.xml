@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.partner.commission</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='quick_edit_mode']" position="after">
+                <div class="app_settings_block" data-key="account">
+                    <h2>Discount Account</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box" id="discount_settings">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Invoice line discounts:</span>
+                               
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label string="Customer Invoices" for="discount_account_id" class="col-lg-3 o_light_label"/>
+                                        <field name="discount_account_id"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
